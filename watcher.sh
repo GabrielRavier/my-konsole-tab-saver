@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ~/.konsole/watcher.sh
+# ~/src/my/konsole-tab-saver/watcher.sh
 
 # Watches the konsole qdbus messages and saves session state changes so they can be restored easily
 # https://docs.kde.org/trunk5/en/applications/konsole/command-line-options.html
@@ -8,7 +8,7 @@
 # Configuration
 COMMAND=''
 WATCH_INTERVAL_SECONDS=15
-SAVEFILE_TERMINAL="${HOME}/.konsole/current-tabs"
+SAVEFILE_TERMINAL="$(pwd)/current-tabs"
 
 # Restore if asked to (not really doable rn)
 # if [ "$1" = "restore" ] ; then
