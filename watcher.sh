@@ -47,7 +47,11 @@ getSessions() {
     done
 }
 
-
+getSessions
+for i in $(pgrep konsole -u $USER | tr '\n' ' ')
+do
+	cp ${SAVEFILE_TERMINAL}-"$i" ${SAVEFILE_TERMINAL}-"$i"-initial-backup
+done
 
 #Update the Konsole sessions every WATCH_INTERVAL_SECONDS seconds
-while true; do getSessions; sleep ${WATCH_INTERVAL_SECONDS}; done
+while true; do sleep ${WATCH_INTERVAL_SECONDS}; getSessions; done
